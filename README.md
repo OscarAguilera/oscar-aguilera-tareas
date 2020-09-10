@@ -334,3 +334,117 @@ NOTE:  Pressing just the motion while in Normal mode without an operator will
      To undo all the changes on a line, type:  U  (capital U)
      To undo the undo's, type:                 CTRL-R
 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                         Lesson 3.1: THE PUT COMMAND
+
+
+       ** Type  p  to put previously deleted text after the cursor. **
+
+  1. Move the cursor to the first ---> line below.
+
+  2. Type  dd  to delete the line and store it in a Vim register.
+
+  3. Move the cursor to the c) line, ABOVE where the deleted line should go.
+
+  4. Type   p   to put the line below the cursor.
+
+  5. Repeat steps 2 through 4 to put all the lines in correct order.
+
+---> d) Can you learn too?
+---> b) Violets are blue,
+---> c) Intelligence is learned,
+---> a) Roses are red,
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                       Lesson 3.2: THE REPLACE COMMAND
+
+
+       ** Type  rx  to replace the character at the cursor with  x . **
+
+  1. Move the cursor to the first line below marked --->.
+
+  2. Move the cursor so that it is on top of the first error.
+
+  3. Type   r   and then the character which should be there.
+
+  4. Repeat steps 2 and 3 until the first line is equal to the second one.
+
+--->  Whan this lime was tuoed in, someone presswd some wrojg keys!
+--->  When this line was typed in, someone pressed some wrong keys!
+
+  5. Now move on to Lesson 3.3.
+
+NOTE: Remember that you should be learning by doing, not memorization.
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                        Lesson 3.3: THE CHANGE OPERATOR
+
+
+           ** To change until the end of a word, type  ce . **
+
+  1. Move the cursor to the first line below marked --->.
+
+  2. Place the cursor on the  u  in  lubw.
+
+  3. Type  ce  and the correct word (in this case, type  ine ).
+
+  4. Press <ESC> and move to the next character that needs to be changed.
+
+  5. Repeat steps 3 and 4 until the first sentence is the same as the second.
+
+---> This lubw has a few wptfd that mrrf changing usf the change operator.
+---> This line has a few words that need changing using the change operator.
+
+Notice that  ce  deletes the word and places you in Insert mode.
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                       Lesson 3.4: MORE CHANGES USING c
+
+
+     ** The change operator is used with the same motions as delete. **
+
+  1. The change operator works in the same way as delete.  The format is:
+
+         c    [number]   motion
+
+  2. The motions are the same, such as   w (word) and  $ (end of line).
+
+  3. Move to the first line below marked --->.
+
+  4. Move the cursor to the first error.
+
+  5. Type  c$  and type the rest of the line like the second and press <ESC>.
+
+---> The end of this line needs some help to make it like the second.
+---> The end of this line needs to be corrected using the  c$  command.
+
+NOTE:  You can use the Backspace key to correct mistakes while typing.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                               Lesson 3 SUMMARY
+
+
+  1. To put back text that has just been deleted, type   p .  This puts the
+     deleted text AFTER the cursor (if a line was deleted it will go on the
+     line below the cursor).
+
+  2. To replace the character under the cursor, type   r   and then the
+     character you want to have there.
+
+  3. The change operator allows you to change from the cursor to where the
+     motion takes you.  eg. Type  ce  to change from the cursor to the end of
+     the word,  c$  to change to the end of a line.
+
+  4. The format for change is:
+
+         c   [number]   motion
+Now go on to the next lesson.
+
