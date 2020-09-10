@@ -565,3 +565,121 @@ NOTE: This is very useful in debugging a program with unmatched parentheses!
      To ask for confirmation each time add 'c'             :%s/old/new/gc
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                Lesson 5.1: HOW TO EXECUTE AN EXTERNAL COMMAND
+
+
+   ** Type  :!  followed by an external command to execute that command. **
+
+  1. Type the familiar command  :  to set the cursor at the bottom of the
+     screen.  This allows you to enter a command-line command.
+
+  2. Now type the  !  (exclamation point) character.  This allows you to
+     execute any external shell command.
+
+  3. As an example type   ls   following the ! and then hit <ENTER>.  This
+     will show you a listing of your directory, just as if you were at the
+     shell prompt.  Or use  :!dir  if ls doesn't work.
+
+NOTE:  It is possible to execute any external command this way, also with
+       arguments.
+
+NOTE:  All  :  commands must be finished by hitting <ENTER>
+       From here on we will not always mention it.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      Lesson 5.2: MORE ON WRITING FILES
+
+
+     ** To save the changes made to the text, type  :w FILENAME. **
+
+  1. Type  :!dir  or  :!ls  to get a listing of your directory.
+     You already know you must hit <ENTER> after this.
+
+  2. Choose a filename that does not exist yet, such as TEST.
+
+  3. Now type:   :w TEST   (where TEST is the filename you chose.)
+
+  4. This saves the whole file (the Vim Tutor) under the name TEST.
+     To verify this, type    :!dir  or  :!ls   again to see your directory.
+
+NOTE: If you were to exit Vim and start it again with  vim TEST , the file
+      would be an exact copy of the tutor when you saved it.
+
+  5. Now remove the file by typing (MS-DOS):    :!del TEST
+                                or (Unix):      :!rm TEST
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    Lesson 5.3: SELECTING TEXT TO WRITE
+
+
+        ** To save part of the file, type  v  motion  :w FILENAME **
+
+  1. Move the cursor to this line.
+
+  2. Press  v  and move the cursor to the fifth item below.  Notice that the
+     text is highlighted.
+
+  3. Press the  :  character.  At the bottom of the screen  :'<,'> will appear.
+
+  4. Type  w TEST  , where TEST is a filename that does not exist yet.  Verify
+     that you see  :'<,'>w TEST  before you press <ENTER>.
+
+  5. Vim will write the selected lines to the file TEST.  Use  :!dir  or  :!ls
+
+     to see it.  Do not remove it yet!  We will use it in the next lesson.
+
+NOTE:  Pressing  v  starts Visual selection.  You can move the cursor around
+       to make the selection bigger or smaller.  Then you can use an operator
+       to do something with the text.  For example,  d  deletes the text.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   Lesson 5.4: RETRIEVING AND MERGING FILES
+
+
+       ** To insert the contents of a file, type  :r FILENAME  **
+
+  1. Place the cursor just above this line.
+
+NOTE:  After executing Step 2 you will see text from Lesson 5.3.  Then move
+       DOWN to see this lesson again.
+
+  2. Now retrieve your TEST file using the command   :r TEST   where TEST is
+     the name of the file you used.
+     The file you retrieve is placed below the cursor line.
+
+  3. To verify that a file was retrieved, cursor back and notice that there
+     are now two copies of Lesson 5.3, the original and the file version.
+
+NOTE:  You can also read the output of an external command.  For example,
+       :r !ls  reads the output of the ls command and puts it below the
+       cursor.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                               Lesson 5 SUMMARY
+
+
+  1.  :!command  executes an external command.
+
+      Some useful examples are:
+         (MS-DOS)         (Unix)
+          :!dir            :!ls            -  shows a directory listing.
+          :!del FILENAME   :!rm FILENAME   -  removes file FILENAME.
+
+  2.  :w FILENAME  writes the current Vim file to disk with name FILENAME.
+
+  3.  v  motion  :w FILENAME  saves the Visually selected lines in file
+      FILENAME.
+
+  4.  :r FILENAME  retrieves disk file FILENAME and puts it below the
+      cursor position.
+
+  5.  :r !dir  reads the output of the dir command and puts it below the
+      cursor position.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
