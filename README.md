@@ -448,3 +448,120 @@ NOTE:  You can use the Backspace key to correct mistakes while typing.
          c   [number]   motion
 Now go on to the next lesson.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                  Lesson 4.1: CURSOR LOCATION AND FILE STATUS
+
+  ** Type CTRL-G to show your location in the file and the file status.
+     Type  G  to move to a line in the file. **
+
+  NOTE: Read this entire lesson before executing any of the steps!!
+
+  1. Hold down the Ctrl key and press  g .  We call this CTRL-G.
+     A message will appear at the bottom of the page with the filename and the
+     position in the file.  Remember the line number for Step 3.
+
+NOTE:  You may see the cursor position in the lower right corner of the screen
+       This happens when the 'ruler' option is set (see  :help 'ruler'  )
+
+  2. Press  G  to move you to the bottom of the file.
+     Type  gg  to move you to the start of the file.
+
+  3. Type the number of the line you were on and then  G .  This will
+     return you to the line you were on when you first pressed CTRL-G.
+
+  4. If you feel confident to do this, execute steps 1 through 3.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        Lesson 4.2: THE SEARCH COMMAND
+
+
+     ** Type  /  followed by a phrase to search for the phrase. **
+
+  1. In Normal mode type the  /  character.  Notice that it and the cursor
+     appear at the bottom of the screen as with the  :  command.
+
+  2. Now type 'errroor' <ENTER>.  This is the word you want to search for.
+
+  3. To search for the same phrase again, simply type  n .
+     To search for the same phrase in the opposite direction, type  N .
+
+  4. To search for a phrase in the backward direction, use  ?  instead of  / .
+
+  5. To go back to where you came from press  CTRL-O  (Keep Ctrl down while
+     pressing the letter o).  Repeat to go back further.  CTRL-I goes forward.
+
+--->  "errroor" is not the way to spell error;  errroor is an error.
+NOTE: When the search reaches the end of the file it will continue at the
+      start, unless the 'wrapscan' option has been reset.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                   Lesson 4.3: MATCHING PARENTHESES SEARCH
+
+
+              ** Type  %  to find a matching ),], or } . **
+
+  1. Place the cursor on any (, [, or { in the line below marked --->.
+
+  2. Now type the  %  character.
+
+  3. The cursor will move to the matching parenthesis or bracket.
+
+  4. Type  %  to move the cursor to the other matching bracket.
+
+  5. Move the cursor to another (,),[,],{ or } and see what  %  does.
+
+---> This ( is a test line with ('s, ['s ] and {'s } in it. ))
+
+
+
+NOTE: This is very useful in debugging a program with unmatched parentheses!
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                      Lesson 4.4: THE SUBSTITUTE COMMAND
+
+
+        ** Type  :s/old/new/g  to substitute 'new' for 'old'. **
+
+  1. Move the cursor to the line below marked --->.
+
+  2. Type  :s/thee/the <ENTER> .  Note that this command only changes the
+     first occurrence of "thee" in the line.
+
+  3. Now type  :s/thee/the/g .  Adding the  g  flag means to substitute
+     globally in the line, change all occurrences of "thee" in the line.
+
+---> thee best time to see thee flowers is in thee spring.
+
+  4. To change every occurrence of a character string between two lines,
+     type   :#,#s/old/new/g    where #,# are the line numbers of the range
+                               of lines where the substitution is to be done.
+     Type   :%s/old/new/g      to change every occurrence in the whole file.
+     Type   :%s/old/new/gc     to find every occurrence in the whole file,
+                               with a prompt whether to substitute or not.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                               Lesson 4 SUMMARY
+
+
+  1. CTRL-G  displays your location in the file and the file status.
+             G  moves to the end of the file.
+     number  G  moves to that line number.
+            gg  moves to the first line.
+
+  2. Typing  /  followed by a phrase searches FORWARD for the phrase.
+     Typing  ?  followed by a phrase searches BACKWARD for the phrase.
+     After a search type  n  to find the next occurrence in the same direction
+     or  N  to search in the opposite direction.
+     CTRL-O takes you back to older positions, CTRL-I to newer positions.
+
+  3. Typing  %  while the cursor is on a (,),[,],{, or } goes to its match.
+
+  4. To substitute new for the first old in a line type    :s/old/new
+     To substitute new for all 'old's on a line type       :s/old/new/g
+     To substitute phrases between two line #'s type       :#,#s/old/new/g
+     To substitute all occurrences in the file type        :%s/old/new/g
+     To ask for confirmation each time add 'c'             :%s/old/new/gc
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
